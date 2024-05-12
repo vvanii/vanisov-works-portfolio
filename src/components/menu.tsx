@@ -2,18 +2,19 @@ import { useState, type FC } from "react";
 import { motion } from "framer-motion";
 
 const Menu: FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   function toggleMenu() {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMenuOpen(!isMenuOpen);
   }
   return (
     <div>
       <button onClick={toggleMenu}>Menu</button>
       {isMenuOpen && (
-        <motion.div className="fixed" 
+        <motion.div
+          className='fixed'
           initial={{ y: "-100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1}}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           <ul>
@@ -25,7 +26,7 @@ const Menu: FC = () => {
         </motion.div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export { Menu }
+export { Menu };

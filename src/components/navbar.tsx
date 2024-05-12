@@ -1,14 +1,13 @@
-import type { FC } from "react"
-import { Menu } from "./menu"
+import type { FC } from "react";
+import { Menu } from "./menu";
 
 const Navbar: FC = () => {
-
   return (
-    <div className="font-semibold text-xl flex justify-between pt-5 mx-5 md:mx-0 bg-fixed">
+    <div className='mx-5 flex justify-between bg-fixed pt-5 text-xl font-semibold md:mx-0'>
       <button>Vlad Anisov</button>
       <Menu />
     </div>
-  )
-}
+  );
+};
 
-export { Navbar}
+export { Navbar };

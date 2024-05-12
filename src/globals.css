@@ -6,28 +6,63 @@
   font-family: Geist, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
 
+  background-color: #f7f7f7;
   color: #222;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/** Custom Font */
+
 @font-face {
-  font-family: 'Geist';
-  src: url('/fonts/GeistVF.woff');
+  font-family: "Geist";
+  src: url("/fonts/GeistVF.woff");
   font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   font-style: normal;
 }
 
-/* Default Values */
+/** Highlight */
+
+/* Common browsers */
+::selection {
+  background-color: #ff9f4b;
+  color: #fff;
+}
+
+/* Mozilla based browsers */
+::-moz-selection {
+  background-color: #ff9f4b;
+  color: #fff;
+}
+
+/* For Other Browsers */
+::-o-selection {
+  background-color: #ff9f4b;
+  color: #fff;
+}
+
+::-ms-selection {
+  background-color: #ff9f4b;
+  color: #fff;
+}
+
+/* For Webkit */
+::-webkit-selection {
+  background-color: #ff9f4b;
+  color: #fff;
+}
+
+/** Default Values */
 p {
   font-size: 18px;
   line-height: 150%;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 3.75rem, 8vw);;
+  font-size: clamp(2.5rem, 3.75rem, 8vw);
   font-weight: 600;
   letter-spacing: -0.1rem;
 }
@@ -44,7 +79,8 @@ h3 {
   letter-spacing: -0.02rem;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 100%;
 }
-
