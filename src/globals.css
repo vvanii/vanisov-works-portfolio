@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Geist, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  color: #222;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/GeistVF.woff');
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  font-style: normal;
+}
+
+/* Default Values */
+p {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 3.75rem, 8vw);;
+  font-weight: 600;
+  letter-spacing: -0.1rem;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.5rem, 6vw);
+  font-weight: 500;
+  letter-spacing: -0.07rem;
+}
+
+h3 {
+  font-size: clamp(1rem, 1.6875rem, 4vw);
+  font-weight: 500;
+  letter-spacing: -0.02rem;
+}
+
+h1, h2, h3 {
+  line-height: 100%;
+}
+
