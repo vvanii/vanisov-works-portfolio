@@ -1,13 +1,15 @@
 import type { FC } from "react";
-import { Menu } from "./menu";
+
+import { NavItem } from "@components";
 
 const Navbar: FC = () => {
   return (
-    <div className='mx-5 flex justify-between bg-fixed pt-5 text-xl font-semibold md:mx-0'>
-      <button>Vlad Anisov</button>
-      <Menu />
+    <div className="flex justify-between bg-fixed pt-10 text-xl font-medium">
+      <NavItem href="/">Vlad Anisov</NavItem>
+      <NavItem>Contact</NavItem>
     </div>
   );
 };
 
 export { Navbar };
+

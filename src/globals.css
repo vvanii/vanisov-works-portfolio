@@ -3,12 +3,22 @@
 @tailwind utilities;
 
 :root {
+  /* Colors */
+  --primary: #222222;
+  --secondary: #4c4c4c;
+  --accent: #ff9f4b;
+  --light: #bcbcbc;
+  --bg: #f7f7f7;
+
+  /* Fonts */
   font-family: Geist, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
 
+  /* Color */
   background-color: #f7f7f7;
   color: #222;
 
+  /* Typography */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -29,35 +39,35 @@
 /* Common browsers */
 ::selection {
   background-color: #ff9f4b;
-  color: #fff;
+  color: var(--bg);
 }
 
 /* Mozilla based browsers */
 ::-moz-selection {
   background-color: #ff9f4b;
-  color: #fff;
+  color: var(--bg);
 }
 
 /* For Other Browsers */
 ::-o-selection {
   background-color: #ff9f4b;
-  color: #fff;
+  color: var(--bg);
 }
 
 ::-ms-selection {
   background-color: #ff9f4b;
-  color: #fff;
+  color: var(--bg);
 }
 
 /* For Webkit */
 ::-webkit-selection {
   background-color: #ff9f4b;
-  color: #fff;
+  color: var(--bg);
 }
 
 /** Default Values */
 p {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 150%;
 }
 
@@ -84,3 +94,4 @@ h2,
 h3 {
   line-height: 100%;
 }
+

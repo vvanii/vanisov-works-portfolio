@@ -1,18 +1,19 @@
-import { Navbar } from "@components";
-import { Hero } from "@components/hero";
+import { Navbar, Projects } from "@components";
 import { MainLayout } from "@layouts";
 
 function App() {
   return (
-    <>
-      <MainLayout>
-        <Navbar />
-        <div className='mt-32'>
-          <Hero />
-        </div>
-      </MainLayout>
-    </>
+    <MainLayout>
+      <Navbar />
+      <h1 className='mt-60 max-w-screen-xl'>
+        Web-developer. Creative Designer. Digital Architect. Coffee Connoisseur.
+      </h1>
+      <div className='mt-40'>
+        <Projects />
+      </div>
+    </MainLayout>
   );
 }
 
 export default App;
+

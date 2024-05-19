@@ -1,0 +1,12 @@
+.hover-zoom:hover img {
+  box-shadow:
+    0 5px 10px 0 rgba(100, 60, 50, 0.05),
+    0 15px 25px 0 rgba(100, 60, 50, 0.3);
+}
+
+.hover-zoom img {
+  box-shadow:
+    0 5px 15px 0 rgba(90, 50, 40, 0.05),
+    0 4px 8px 0 rgba(80, 40, 30, 0.2);
+}
+
