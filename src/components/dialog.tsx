@@ -54,7 +54,7 @@ const Dialog = forwardRef<DialogHandle, Props>(({ children }, ref) => {
                 onClick={() => setIsOpen(false)}
                 className="absolute top-4 right-5 size-min group flex justify-center items-center"
               >
-                <p className="text-2xl font-[100] opacity-70">{"\u25CB"}</p>
+                <p className="text-2xl font-[100]">{"\u25CB"}</p>
               </motion.button>
               <motion.button
                 onClick={() => setIsOpen(false)}
@@ -63,7 +63,7 @@ const Dialog = forwardRef<DialogHandle, Props>(({ children }, ref) => {
                 whileHover={{ scale: 0.65, opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <p className="text-2xl font-[300] opacity-70">{"\u25CB"}</p>
+                <p className="text-2xl font-[300]">{"\u25CB"}</p>
               </motion.button>
             </motion.div>
           </div>

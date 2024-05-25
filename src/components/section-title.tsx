@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   useEffect,
   useState,
@@ -33,8 +34,10 @@ const SectionTitle: FC<Props> = ({
   }, [children]);
 
   const handleClick = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
+    event: React.MouseEvent<HTMLAnchorElement>,
+    anchorTarget: HTMLElement | null,
+    children: React.ReactNode
+  ): void => {
     event.preventDefault();
     if (anchorTarget) {
       anchorTarget.scrollIntoView({
@@ -43,12 +46,18 @@ const SectionTitle: FC<Props> = ({
         inline: "nearest",
       });
     }
+    window.history.pushState(
+      null,
+      "",
+      `#${generateAnchor(children as string)}`
+    );
   };
 
   return (
     <>
       {anchored ? (
         <div
+          className="w-fit"
           style={{
             marginLeft: "-20px",
           }}
@@ -56,21 +65,20 @@ const SectionTitle: FC<Props> = ({
           <div
             onMouseEnter={() => setIsHashtagVisible(true)}
             onMouseLeave={() => setIsHashtagVisible(false)}
-            className="block relative"
+            className="block relative group py-4 pr-4"
             style={{ paddingLeft: "20px" }}
           >
             {isHashtagVisible && (
-              <a
+              <motion.a
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 href={`#${generateAnchor(children as string)}`}
-                onClick={handleClick}
-                className="text-light text-xl absolute -ml-4"
-                style={{
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                }}
+                onClick={(event) => handleClick(event, anchorTarget, children)}
+                className={cn("text-light text-xl absolute -ml-4")}
               >
                 #
-              </a>
+              </motion.a>
             )}
             <h3
               id={generateAnchor(children as string)}

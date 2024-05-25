@@ -10,4 +10,6 @@ export * from "./contact";
 export * from "./contact-form";
 export * from "./dialog";
 export * from "./button";
+export * from "./icons";
+export * from "./toaster";
 
