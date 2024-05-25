@@ -8,7 +8,7 @@ const Menu: FC = () => {
     <div>
       <NavItem>Menu</NavItem>
       <motion.div
-        className='fixed'
+        className="fixed"
         initial={{ x: "100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}

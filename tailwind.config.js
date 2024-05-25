@@ -10,8 +10,13 @@ export default {
         light: "var(--light)",
         background: "var(--bg)",
       },
+      transitionDuration: {
+        400: "400ms",
+        600: "600ms",
+      },
     },
   },
+  // eslint-disable-next-line no-undef
   plugins: [],
 };
 

@@ -1,13 +1,15 @@
-import { Project } from "@types";
+import type { FC } from "react";
+
+import { Project } from "@/types";
 
 import { ProjectItem } from "./project-item";
 import { SectionTitle } from "./section-title";
 
-const Projects = () => {
+const Projects: FC = () => {
   return (
     <section>
-      <SectionTitle>Projects</SectionTitle>
-      <div className="mt-20">
+      <SectionTitle anchored>Projects</SectionTitle>
+      <div className="mt-20 grid">
         {projects.map((project, i) => (
           <div
             key={i}

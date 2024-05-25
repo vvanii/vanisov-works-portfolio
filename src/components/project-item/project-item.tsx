@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-import type { Project } from "@types";
+import type { Project } from "@/types";
 
 import "./project-item.style.css";
 
@@ -10,7 +10,7 @@ interface Props {
 
 const ProjectItem: FC<Props> = ({ project }) => {
   return (
-    <div className="bg-[#eeedeb] rounded-lg text-center w-fit group cursor-pointer hover-zoom relative">
+    <div className="bg-[#eeedeb] rounded-lg text-center w-full group cursor-pointer hover-zoom relative">
       <a
         href={project.url}
         target="_blank"

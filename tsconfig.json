@@ -24,24 +24,6 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@components": [
-        "src/components"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@layouts": [
-        "src/layouts"
-      ],
-      "@types/*": [
-        "src/types/*"
-      ],
-      "@types": [
-        "src/types"
-      ],
       "@/*": [
         "src/*"
       ]
