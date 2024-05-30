@@ -5,50 +5,45 @@ import { Project } from "@/types";
 import { ProjectItem } from "./project-item";
 import { SectionTitle } from "./section-title";
 
-const Projects: FC = () => {
-  return (
-    <section>
-      <SectionTitle anchored>Projects</SectionTitle>
-      <div className="mt-20 grid grid-cols-3">
-        {projects.map((project, i) => (
-          <div
-            key={i}
-            className="mb-10"
-          >
-            <ProjectItem project={project} />
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+const Projects: FC = () => (
+  <section>
+    <SectionTitle anchored>Projects</SectionTitle>
+    <div className="mt-20 grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-span-1 gap-5 mx-auto justify-center">
+      {projects.map((project, i) => (
+        <div key={i}>
+          <ProjectItem project={project} />
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+export { Projects };
 
 const projects: Project[] = [
   {
     name: "Liya Melnichuk Portfolio",
     company: "Freelance",
-    image: "/images/liyamelnichuk-ss.jpeg",
+    image: "/images/liya-melnichuk-ss.jpeg",
     url: "https://liyamelnichuk.com",
   },
   {
     name: "Portrait By Alina",
     company: "Freelance",
-    image: "",
+    image: "/images/portrait-by-alina-ss.jpeg",
     url: "https://portraitbyalina.com",
   },
   {
     name: "Propser Plan",
     company: "Freelance",
-    image: "/",
+    image: "/images/prosper-plan-ss.jpeg",
     url: "https://prosperplan.com",
   },
   {
     name: "First Leads",
     company: "First Leads Generation",
-    image: "/",
+    image: "/images/first-leads-ss.jpeg",
     url: "https://firstleads.ai",
   },
 ];
-
-export { Projects };
 
