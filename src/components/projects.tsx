@@ -9,7 +9,7 @@ const Projects: FC = () => {
   return (
     <section>
       <SectionTitle anchored>Projects</SectionTitle>
-      <div className="mt-20 grid">
+      <div className="mt-20 grid grid-cols-3">
         {projects.map((project, i) => (
           <div
             key={i}
@@ -29,6 +29,24 @@ const projects: Project[] = [
     company: "Freelance",
     image: "/images/liyamelnichuk-ss.jpeg",
     url: "https://liyamelnichuk.com",
+  },
+  {
+    name: "Portrait By Alina",
+    company: "Freelance",
+    image: "",
+    url: "https://portraitbyalina.com",
+  },
+  {
+    name: "Propser Plan",
+    company: "Freelance",
+    image: "/",
+    url: "https://prosperplan.com",
+  },
+  {
+    name: "First Leads",
+    company: "First Leads Generation",
+    image: "/",
+    url: "https://firstleads.ai",
   },
 ];
 
