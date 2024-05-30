@@ -1,14 +1,16 @@
 import type { FC, LinkHTMLAttributes, ReactNode } from "react";
 import { Link } from "react-router-dom";
 
+import { cn } from "@/utils";
+
 interface Props extends LinkHTMLAttributes<HTMLAnchorElement> {
   href?: string;
   children: ReactNode;
 }
 
-const RouteLink: FC<Props> = ({ children, href, ...props }) => (
+const RouteLink: FC<Props> = ({ children, href, className, ...props }) => (
   <Link
-    className="group group relative cursor-pointer text-[20px]"
+    className={cn("group group relative cursor-pointer text-[20px]", className)}
     to={href || ""}
     {...props}
   >
@@ -18,4 +20,3 @@ const RouteLink: FC<Props> = ({ children, href, ...props }) => (
 );
 
 export { RouteLink };
-

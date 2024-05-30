@@ -94,4 +94,3 @@ const CircleCloseIcon = (props: SVGProps<SVGSVGElement>) => (
 );
 
 export { CheckmarkIcon, LoadingIcon, CircleCloseIcon };
-

@@ -1,13 +1,13 @@
 import type { FC } from "react";
 
-import { ContactForm } from "./contact-form";
-import { SectionTitle } from "./section-title";
+import { ContactForm } from "@/components";
+import { SectionTitle } from "@/components/ui";
 
 const Contact: FC = () => (
-  <div className="text-center mt-14 mb-7">
+  <div className="mb-7 mt-14 text-center">
     <SectionTitle className="mb-5">Get in touch.</SectionTitle>
-    <div className="pt-5 space-y-5">
-      <p className="text-secondary text-[16px] xl:text-lg">
+    <div className="space-y-5 pt-5">
+      <p className="text-[16px] text-secondary xl:text-lg">
         Please fill out the form below, I'd love to connect with you!
       </p>
       <ContactForm />
@@ -16,4 +16,3 @@ const Contact: FC = () => (
 );
 
 export { Contact };
-

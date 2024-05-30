@@ -1,13 +1,10 @@
 import type { FC } from "react";
 
+import { ProjectItem } from "@/components";
 import { Project } from "@/types";
-
-import { ProjectItem } from "./project-item";
-import { SectionTitle } from "./section-title";
 
 const Projects: FC = () => (
   <section>
-    <SectionTitle anchored>Projects</SectionTitle>
     <div className="mt-20 grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-span-1 gap-5 mx-auto justify-center">
       {projects.map((project, i) => (
         <div key={i}>

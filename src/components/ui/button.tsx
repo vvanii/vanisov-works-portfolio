@@ -10,7 +10,7 @@ const Button: FC<Props> = ({ children, className, ...props }) => {
   return (
     <button
       className={cn(
-        "border-[0.8px] border-secondary hover:border-primary text-secondary hover:text-primary transition-colors duration-400 ease-in-out rounded-full text-sm h-10 font-light w-full",
+        "h-10 w-full rounded-full border-[0.8px] border-secondary text-sm font-light text-secondary transition-colors duration-400 ease-in-out hover:border-primary hover:text-primary",
         className
       )}
       {...props}
@@ -21,4 +21,3 @@ const Button: FC<Props> = ({ children, className, ...props }) => {
 };
 
 export { Button };
-

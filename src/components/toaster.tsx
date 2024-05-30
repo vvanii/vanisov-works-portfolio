@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { Toaster as ToasterPrimitive } from "react-hot-toast";
 
-import { CircleCloseIcon } from "./icons";
+import { CircleCloseIcon } from "@/components/ui";
 
 const Toaster: FC = () => (
   <ToasterPrimitive
@@ -16,4 +16,3 @@ const Toaster: FC = () => (
 );
 
 export { Toaster };
-

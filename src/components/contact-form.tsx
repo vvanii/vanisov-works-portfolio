@@ -3,13 +3,17 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
 
+import {
+  Button,
+  CheckmarkIcon,
+  Input,
+  LoadingIcon,
+  Selection,
+  Textarea,
+} from "@/components/ui";
 import { cn } from "@/utils";
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-import { Button } from "./button";
-import { CheckmarkIcon, LoadingIcon } from "./icons";
-import { Input, Selection, Textarea } from "./input";
 
 const ContactSchema = z.object({
   name: z.string().min(1),
@@ -63,7 +67,7 @@ const ContactForm: FC = () => {
     <form
       ref={(ref) => (formRef.current = ref)}
       onSubmit={handleSubmit(onSubmit)}
-      className="gap-5 max-w-xl mx-auto grid"
+      className="mx-auto grid max-w-xl gap-5"
     >
       <Input
         {...register("name")}
@@ -95,27 +99,27 @@ const ContactForm: FC = () => {
       <Textarea
         {...register("message")}
         placeholder="Message*"
-        className="col-span-2 min-h-32 max-h-[500px]"
+        className="col-span-2 max-h-[500px] min-h-32"
         spellCheck
       />
-      <div className="pt-5 flex justify-center col-span-2">
+      <div className="col-span-2 flex justify-center pt-5">
         <Button
           type="submit"
           className={cn(
             "w-40",
             !isValid
-              ? "opacity-30 pointer-events-none duration-300 transition-opacity ease-in-out"
+              ? "pointer-events-none opacity-30 transition-opacity duration-300 ease-in-out"
               : "opacity-100 transition-opacity ease-in-out",
             isSubmitSuccessful && !errors && "pointer-events-none"
           )}
         >
           <p className="text-sm">
             {isSubmitting || isLoading ? (
-              <span className="flex justify-center items-center">
+              <span className="flex items-center justify-center">
                 <LoadingIcon className="h-5 w-5 animate-spin" /> Sending
               </span>
             ) : isSubmitSuccessful ? (
-              <span className="flex justify-center items-center">
+              <span className="flex items-center justify-center">
                 <CheckmarkIcon className="h-5 w-5" /> Sent
               </span>
             ) : (
@@ -129,4 +133,3 @@ const ContactForm: FC = () => {
 };
 
 export { ContactForm };
-
