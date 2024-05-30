@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   useEffect,
   useState,
@@ -24,7 +24,7 @@ const SectionTitle: FC<Props> = ({
   const [anchorTarget, setAnchorTarget] = useState<HTMLElement | null>(null);
 
   const generateAnchor = (text: string) => {
-    return text.toLowerCase().replace(" ", "-");
+    return text.toLowerCase().replace(/\s+/g, "-");
   };
 
   useEffect(() => {
@@ -53,26 +53,27 @@ const SectionTitle: FC<Props> = ({
     );
   };
 
-  return (
-    <>
-      {anchored ? (
+  if (anchored) {
+    return (
+      <div
+        className="w-fit"
+        style={{
+          marginLeft: "-30px",
+        }}
+      >
         <div
-          className="w-fit"
-          style={{
-            marginLeft: "-20px",
-          }}
+          onMouseEnter={() => setIsHashtagVisible(true)}
+          onMouseLeave={() => setIsHashtagVisible(false)}
+          className="block relative group py-4 pr-4"
+          style={{ paddingLeft: "30px" }}
         >
-          <div
-            onMouseEnter={() => setIsHashtagVisible(true)}
-            onMouseLeave={() => setIsHashtagVisible(false)}
-            className="block relative group py-4 pr-4"
-            style={{ paddingLeft: "20px" }}
-          >
+          <AnimatePresence>
             {isHashtagVisible && (
               <motion.a
+                key="hashtag"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, transition: { duration: 0.2 } }}
                 href={`#${generateAnchor(children as string)}`}
                 onClick={(event) => handleClick(event, anchorTarget, children)}
                 className={cn("text-light text-xl absolute -ml-4")}
@@ -80,24 +81,26 @@ const SectionTitle: FC<Props> = ({
                 #
               </motion.a>
             )}
-            <h3
-              id={generateAnchor(children as string)}
-              className={cn("font-light text-primary", className)}
-              {...props}
-            >
-              {children}
-            </h3>
-          </div>
+          </AnimatePresence>
+          <h3
+            id={generateAnchor(children as string)}
+            className={cn("font-light text-primary", className)}
+            {...props}
+          >
+            {children}
+          </h3>
         </div>
-      ) : (
-        <h3
-          className={cn("font-light text-primary", className)}
-          {...props}
-        >
-          {children}
-        </h3>
-      )}
-    </>
+      </div>
+    );
+  }
+
+  return (
+    <h3
+      className={cn("font-light text-primary", className)}
+      {...props}
+    >
+      {children}
+    </h3>
   );
 };
 
