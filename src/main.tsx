@@ -1,18 +1,26 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
-
-import { SmoothScroll, Toaster } from "@/components";
-
-import App from "./App.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./globals.css";
 
+import { About, Root } from "@/pages";
+
+import { RootLayout } from "./layouts";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <SmoothScroll>
-      <Toaster />
-      <App />
-    </SmoothScroll>
-  </React.StrictMode>
+  <RootLayout>
+    <RouterProvider router={router} />
+  </RootLayout>
 );
 

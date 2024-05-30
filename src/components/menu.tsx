@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import type { FC } from "react";
 
-import { NavItem } from "./nav-item";
+import { RouteLink } from "@/components";
 
 const Menu: FC = () => (
   <div>
-    <NavItem>Menu</NavItem>
+    <RouteLink href={""}>Menu</RouteLink>
     <motion.div
       className="fixed"
       initial={{ x: "100%", opacity: 0 }}

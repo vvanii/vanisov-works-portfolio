@@ -61,9 +61,9 @@ const SectionTitle: FC<Props> = ({
           marginLeft: "-30px",
         }}
       >
-        <div
-          onMouseEnter={() => setIsHashtagVisible(true)}
-          onMouseLeave={() => setIsHashtagVisible(false)}
+        <motion.div
+          onHoverStart={() => setIsHashtagVisible(true)}
+          onHoverEnd={() => setIsHashtagVisible(false)}
           className="block relative group py-4 pr-4"
           style={{ paddingLeft: "30px" }}
         >
@@ -89,7 +89,7 @@ const SectionTitle: FC<Props> = ({
           >
             {children}
           </h3>
-        </div>
+        </motion.div>
       </div>
     );
   }

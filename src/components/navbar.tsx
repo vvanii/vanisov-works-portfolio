@@ -1,9 +1,6 @@
 import { useRef, type FC } from "react";
 
-import { NavItem } from "@/components";
-
-import { Contact } from "./contact";
-import { Dialog, DialogHandle } from "./dialog";
+import { Contact, Dialog, DialogHandle, RouteLink } from "@/components";
 
 const Navbar: FC = () => {
   const dialogRef = useRef<DialogHandle>(null);
@@ -14,8 +11,8 @@ const Navbar: FC = () => {
 
   return (
     <div className="flex justify-between bg-fixed w-full pt-10 text-xl font-medium">
-      <NavItem href="/">Vlad Anisov</NavItem>
-      <NavItem onClick={openDialog}>Contact</NavItem>
+      <RouteLink href="/">Vlad Anisov</RouteLink>
+      <RouteLink onClick={openDialog}>Contact</RouteLink>
       <Dialog ref={dialogRef}>
         <Contact />
       </Dialog>
