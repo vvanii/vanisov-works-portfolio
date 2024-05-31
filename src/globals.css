@@ -73,7 +73,7 @@ p {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 3.75rem, 8vw);
+  font-size: clamp(2.5rem, 4rem, 8vw);
   font-weight: 600;
   letter-spacing: -0.1rem;
 }

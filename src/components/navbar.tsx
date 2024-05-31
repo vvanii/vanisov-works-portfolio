@@ -10,15 +10,14 @@ const Navbar: FC = () => {
   };
 
   return (
-    <div className="flex justify-between bg-fixed w-full pt-10 text-xl font-medium">
+    <nav className="flex w-full justify-between bg-fixed pt-10 text-xl font-medium">
       <RouteLink href="/">Vlad Anisov</RouteLink>
       <RouteLink onClick={openDialog}>Contact</RouteLink>
       <Dialog ref={dialogRef}>
         <Contact />
       </Dialog>
-    </div>
+    </nav>
   );
 };
 
 export { Navbar };
-
